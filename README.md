@@ -61,3 +61,4 @@ Reference: https://docs.bitnami.com/tutorials/integrate-logging-kubernetes-kiban
 - tested on kube version 1.17
 - suggest to use fluent-bit (option 1), less resources needed
 - if you're running kube 1.15 or lower, suggest to use https://github.com/komljen/helm-charts/tree/master/efk directly, less effort
+- fluentd vs fluent-bit: https://logz.io/blog/fluentd-vs-fluent-bit/
