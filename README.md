@@ -62,3 +62,12 @@ Reference: https://docs.bitnami.com/tutorials/integrate-logging-kubernetes-kiban
 - suggest to use fluent-bit (option 1), less resources needed
 - if you're running kube 1.15 or lower, suggest to use https://github.com/komljen/helm-charts/tree/master/efk directly, less effort
 - fluentd vs fluent-bit: https://logz.io/blog/fluentd-vs-fluent-bit/
+
+### auto remove old es index
+helm install -n logging  elasticsearch-curator stable/elasticsearch-curator
+
+change config map elasticsearch-curator-config find "hosts" and update value to elasticsearch-elasticsearch-coordinating-only.logging.svc.cluster.local
+
+for the Cron Jobs, it's suggested to add the following config in spec section
+  successfulJobsHistoryLimit: 0
+  failedJobsHistoryLimit: 0
